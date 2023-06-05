@@ -1,4 +1,4 @@
 // Reexport your entry components here
-import { Background } from "./Background.svelte";
+import Background from "./Background.svelte";
 
-export default Background;
+export { Background };

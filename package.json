@@ -1,6 +1,5 @@
 {
-	"name": "svelte-animation-bg",
-	"homepage": "https://mobinghaemi.github.io/animation-bg",
+	"name": "https://mobinghaemi.github.io/animation-bg",
 	"version": "0.0.6",
 	"scripts": {
 		"dev": "vite dev",

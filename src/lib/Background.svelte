@@ -8,8 +8,9 @@
     export let characters = ["🗿"];
     export let count = 50;
 
+
     // Variables
-    let confetti = new Array(count)
+    $: confetti = new Array(count)
         .fill()
         .map((_, i) => {
             return {
@@ -45,6 +46,7 @@
     // Props
     // export let box_count = 10;
     export let colour = "rgba(0, 0, 0, 0.5)";
+
     // Variables
     let boxItems = new Array(10).fill();
     let innerHeight;
@@ -53,7 +55,8 @@
     let bubblesItem = new Array(15).fill();
 
     // Anime:Gradient
-    export let colours = ['#ee7752, #e73c7e, #23a6d5, #23d5ab'].join(',')
+    export let colours = ['#ee7752, #e73c7e, #23a6d5, #23d5ab']
+    $: useColours = colours.join(',')
     export let deg = 45
 
 </script>
@@ -70,7 +73,7 @@
         {/each}
     </div>
 {:else if name === "box"}
-    <ul class="circles" style={`height : ${innerHeight + 10}px`}>
+    <ul class="circles" style={`height : ${innerHeight}px`}>
         {#each boxItems as box}
             <li style={`background: ${colour}`} />
         {/each}
@@ -84,7 +87,7 @@
         {/each}
     </div>
 {:else if name === "gradient"}
-    <div class="body" style={` background: linear-gradient(-${deg}deg, ${colours});`}/>
+    <div class="body" style={` background: linear-gradient(-${deg}deg, ${useColours});`}/>
 {/if}
 
 <style>
@@ -284,6 +287,7 @@
         position: fixed;
         top: 0;
         left: 0;
+        z-index: -1;
     }
     .wrapper div {
         height: 60px;
